@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Favicon (Browser Tab Icon) -->
+    <link rel="icon" type="image/png" href="logo.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adham Ehab | ECE Researcher & AI Engineer</title>
@@ -17,9 +19,10 @@
         --text-primary: #0f172a;
         --text-secondary: #334155;
         --text-muted: #64748b;
-        --accent: #2563eb;
-        --accent-hover: #1d4ed8;
-        --accent-soft: rgba(37, 99, 235, 0.1);
+        /* UPDATED TO MATCH YOUR LOGO GOLD */
+        --accent: #c5a059; 
+        --accent-hover: #a38241;
+        --accent-soft: rgba(197, 160, 89, 0.1);
         --border: #e2e8f0;
         --nav-bg: rgba(255, 255, 255, 0.9);
         --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
@@ -34,12 +37,31 @@
         --text-primary: #f1f5f9;
         --text-secondary: #cbd5e1;
         --text-muted: #94a3b8;
-        --accent: #60a5fa;
-        --accent-hover: #93c5fd;
-        --accent-soft: rgba(96, 165, 250, 0.2);
+        /* BRIGHTER GOLD FOR DARK MODE */
+        --accent: #d4af37;
+        --accent-hover: #f1c40f;
+        --accent-soft: rgba(212, 175, 55, 0.2);
         --border: #334155;
         --nav-bg: rgba(2, 6, 23, 0.9);
         --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+    }
+     /* Navbar Logo Styling */
+    .logo-container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+    }
+    .nav-logo-img {
+        height: 32px; /* Small like LinkedIn icon */
+        width: auto;
+        border-radius: 4px;
+    }
+    .logo-text {
+        font-weight: 800;
+        font-size: 1.2rem;
+        color: var(--text-primary);
+        letter-spacing: -0.5px;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
@@ -199,16 +221,20 @@
 <body data-theme="light">
 
     <nav>
-        <div class="nav-content">
-            <a href="#" class="logo">Adham Ehab</a>
-            <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#skills">Skills</a>
-                <a href="#contact">Contact</a>
-                <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
-            </div>
+    <div class="nav-content">
+        <a href="#" class="logo-container">
+            <!-- Your AE Logo -->
+            <img src="logo.png" alt="AE Logo" class="nav-logo-img">
+            <span class="logo-text">Adham Ehab</span>
+        </a>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+            <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
         </div>
+    </div>
     </nav>
 
     <header class="hero">
