@@ -1,321 +1,759 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Adham Ehab | Portfolio</title>
-
-<!-- Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<style>
-:root {
-    --bg: #f5f7fa;
-    --text: #333;
-    --card: #ffffff;
-    --primary: #0a2540;
-    --accent: #007bff;
-}
-
-body.dark {
-    --bg: #0d1117;
-    --text: #e6edf3;
-    --card: #161b22;
-    --primary: #58a6ff;
-    --accent: #1f6feb;
-}
-
-* {
-    transition: background 0.4s, color 0.4s;
-}
-
-body {
-    margin: 0;
-    font-family: "Segoe UI", Arial, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-}
-
-header {
-    background: linear-gradient(135deg, var(--primary), var(--accent));
-    color: white;
-    padding: 60px 20px;
-    text-align: center;
-}
-
-header h1 { font-size: 42px; margin: 0; }
-header p { opacity: 0.9; }
-
-.social a {
-    color: white;
-    margin: 0 10px;
-    font-size: 22px;
-}
-.profile-img {
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid white;
-    margin-bottom: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-}
-
-nav {
-    background: var(--card);
-    padding: 15px;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-nav a {
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: bold;
-    color: var(--primary);
-}
-
-.toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: var(--card);
-    border-radius: 50%;
-    padding: 12px;
-    cursor: pointer;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
-section {
-    max-width: 1000px;
-    margin: 60px auto;
-    padding: 0 20px;
-    opacity: 0;
-    transform: translateY(40px);
-    transition: 0.8s;
-}
-
-section.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-h2 {
-    border-bottom: 3px solid var(--accent);
-    display: inline-block;
-    padding-bottom: 5px;
-}
-
-.card {
-    background: var(--card);
-    padding: 25px;
-    border-radius: 12px;
-    margin-top: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-
-.skills span {
-    display: inline-block;
-    background: var(--accent);
-    color: white;
-    padding: 8px 15px;
-    border-radius: 20px;
-    margin: 6px;
-    font-size: 14px;
-}
-
-.btn {
-    display: inline-block;
-    background: var(--accent);
-    color: white;
-    padding: 12px 25px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: bold;
-    margin-top: 15px;
-}
-
-.contact a {
-    color: var(--accent);
-    text-decoration: none;
-    font-weight: bold;
-}
-
-footer {
-    background: var(--card);
-    padding: 20px;
-    text-align: center;
-    margin-top: 50px;
-}
-/* =========================
-   MOBILE RESPONSIVE FIXES
-   ========================= */
-@media (max-width: 768px) {
-
-    header {
-        padding: 40px 15px;
-    }
-
-    header h1 {
-        font-size: 28px;
-    }
-
-    header p {
-        font-size: 14px;
-    }
-
-    .profile-img {
-        width: 110px;
-        height: 110px;
-    }
-
-    nav {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    nav a {
-        margin: 8px 10px;
-        font-size: 14px;
-    }
-
-    section {
-        margin: 40px auto;
-        padding: 0 15px;
-    }
-
-    h2 {
-        font-size: 20px;
-    }
-
-    .card {
-        padding: 20px;
-    }
-
-    .skills span {
-        font-size: 12px;
-        padding: 6px 12px;
-    }
-
-    .toggle {
-        top: 10px;
-        right: 10px;
-        padding: 10px;
-    }
-
-    footer {
-        font-size: 13px;
-    }
-}
-
-</style>
-</head>
-
-<body>
-
-<div class="toggle" onclick="toggleDark()">
-    <i class="fas fa-moon"></i>
-</div>
-body {
-    -webkit-tap-highlight-color: transparent;
-}
-
-<header>
-    <img src="profile.jpg" alt="Adham Ehab" class="profile-img">
-
-    <h1>Adham Ehab</h1>
-    <p>Electronics & Communication Engineer | AI & Embedded Systems</p>
-
-    <div class="social">
-        <a href="https://www.linkedin.com/in/adham-ehab-2003birth/" target="_blank">
-            <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="https://wa.me/201204510329" target="_blank">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-    </div>
-
-    <a class="btn" href="Adham_Ehab_CV.pdf" download>Download CV</a>
-</header>
-
-<nav>
-    <a href="#profile">Profile</a>
-    <a href="#education">Education</a>
-    <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
-    <a href="#contact">Contact</a>
-</nav>
-
-<section id="profile">
-<h2>Profile</h2>
-<div class="card">
-Electronics and Communication Engineering student at Alexandria University with strong background in
-digital communication, machine learning, neural networks, and embedded systems. Passionate about
-research, academia, and advanced engineering systems.
-</div>
-</section>
-
-<section id="education">
-<h2>Education</h2>
-<div class="card">
-<b>B.Sc. Electronics & Communication Engineering</b><br>
-Alexandria University – Expected 2026<br>
-GPA: 3.5 / 4.0 (Excellent)
-</div>
-</section>
-
-<section id="projects">
-<h2>Projects</h2>
-<div class="card">
-<ul>
-<li>Voice Recognition Circuit (Speaker Independent)</li>
-<li>IC Tester & Identification System</li>
-<li>OFDM & 2×2 MIMO System Simulation (MATLAB)</li>
-<li>Digital Filter with Variable Cutoff Frequency</li>
-</ul>
-</div>
-</section>
-
-<section id="skills">
-<h2>Skills</h2>
-<div class="card skills">
-<span>C</span><span>C++</span><span>MATLAB</span><span>LaTeX</span>
-<span>ARM</span><span>AVR</span><span>Embedded Systems</span>
-<span>Machine Learning</span>
-</div>
-</section>
-
-<section id="contact">
-<h2>Contact Me</h2>
-<div class="card contact">
-<p>Email: <a href="mailto:engadhamehaberfan@gmail.com">engadhamehaberfan@gmail.com</a></p>
-<p>WhatsApp: <a href="https://wa.me/201204510329">+20 120 451 0329</a></p>
-<p>LinkedIn: <a href="https://www.linkedin.com/in/adham-ehab-2003birth/" target="_blank">Click Here</a></p>
-</div>
-</section>
-
-<footer>
-© 2026 Adham Ehab — Academic & Engineering
-</footer>
-
-<script>
-function toggleDark() {
-    document.body.classList.toggle("dark");
-}
-
-const sections = document.querySelectorAll("section");
-window.addEventListener("scroll", () => {
-    sections.forEach(sec => {
-        const top = sec.getBoundingClientRect().top;
-        if (top < window.innerHeight - 100) {
-            sec.classList.add("show");
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adham Ehab | Engineering & Design Portfolio</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            /* Light Theme (Default) */
+            --bg-primary: #fcfcfd;
+            --bg-secondary: #f3f4f6;
+            --bg-card: #ffffff;
+            --text-primary: #111827;
+            --text-secondary: #4b5563;
+            --text-muted: #9ca3af;
+            --accent: #2563eb;
+            --accent-hover: #1d4ed8;
+            --accent-soft: rgba(37, 99, 235, 0.1);
+            --border: #e5e7eb;
+            --nav-bg: rgba(252, 252, 253, 0.8);
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
-    });
-});
-</script>
 
+        [data-theme="dark"] {
+            --bg-primary: #0b0f1a;
+            --bg-secondary: #161b22;
+            --bg-card: #1f2937;
+            --text-primary: #f9fafb;
+            --text-secondary: #d1d5db;
+            --text-muted: #6b7280;
+            --accent: #60a5fa;
+            --accent-hover: #93c5fd;
+            --accent-soft: rgba(96, 165, 250, 0.15);
+            --border: #374151;
+            --nav-bg: rgba(11, 15, 26, 0.85);
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: var(--transition);
+        }
+
+        /* Animated Mesh Background */
+        .mesh-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.4;
+            pointer-events: none;
+            background-image: 
+                radial-gradient(at 0% 0%, var(--accent-soft) 0, transparent 50%), 
+                radial-gradient(at 100% 100%, var(--accent-soft) 0, transparent 50%);
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-weight: 800;
+            letter-spacing: -0.025em;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: var(--nav-bg);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .theme-toggle:hover {
+            transform: translateY(-2px);
+            background: var(--accent-soft);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 180px 0 100px;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 6px 16px;
+            background: var(--accent-soft);
+            color: var(--accent);
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 650px;
+            margin: 0 auto 2.5rem;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        .btn {
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: #fff;
+            box-shadow: 0 4px 14px 0 rgba(37, 99, 235, 0.39);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.23);
+        }
+
+        .btn-secondary {
+            background: var(--bg-card);
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: var(--bg-secondary);
+            transform: translateY(-3px);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-header .line {
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            margin: 0 auto;
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-content h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-content p {
+            color: var(--text-secondary);
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            padding: 1.5rem;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+        .stat-card span {
+            display: block;
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+
+        .stat-card p {
+            margin: 0;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* Project Cards */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            box-shadow: var(--shadow);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent);
+        }
+
+        .project-img {
+            height: 200px;
+            background: var(--bg-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--text-muted);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .project-info {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tag {
+            padding: 4px 10px;
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border: 1px solid var(--border);
+        }
+
+        .project-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .project-info p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .project-link {
+            text-decoration: none;
+            color: var(--accent);
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.9rem;
+        }
+
+        /* Skills Grid */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+        .skill-category h3 {
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .skill-badge {
+            background: var(--bg-secondary);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid var(--border);
+        }
+
+        /* Contact Section */
+        .contact-footer {
+            background: var(--bg-secondary);
+            padding: 80px 0 40px;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-content {
+            text-align: center;
+        }
+
+        .footer-socials {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-socials a {
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .footer-socials a:hover {
+            color: var(--accent);
+            transform: scale(1.2);
+        }
+
+        .footer-bottom {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .nav-links { display: none; }
+            .hero h1 { font-size: 3rem; }
+            .section-header h2 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body data-theme="light">
+
+    <div class="mesh-bg"></div>
+
+    <nav id="navbar">
+        <div class="container nav-content">
+            <a href="#" class="logo">Adham.</a>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero" id="home">
+        <div class="container">
+            <span class="hero-badge">Available for Master's Scholarship Opportunities</span>
+            <h1>Engineering <span>AI-Native</span> Wireless Systems</h1>
+            <p>Electronics & Communication Engineer specialized in Deep Learning for PHY layer design and 5G/6G network optimization.</p>
+            <div class="cta-group">
+                <a href="#projects" class="btn btn-primary">View My Projects <i class="fas fa-arrow-right"></i></a>
+                <a href="Adham_Ehab_CV.pdf" class="btn btn-secondary" download>Download CV <i class="fas fa-file-pdf"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="container reveal">
+        <div class="section-header">
+            <h2>About Me</h2>
+            <div class="line"></div>
+        </div>
+        <div class="about-grid">
+            <div class="about-content">
+                <h3>Bridging AI and Signal Processing</h3>
+                <p>I am a final-year Electronics & Communication Engineering student at Alexandria University (GPA 3.5/4.0), passionate about the intersection of machine learning and wireless physical-layer design.</p>
+                <p>My research focuses on deep learning frameworks for 5G beam management, reconfigurable intelligent surfaces, and information-theoretic communication design. I thrive at the junction of complex mathematics and modern software development.</p>
+                <a href="#contact" class="btn btn-secondary">Let's Connect</a>
+            </div>
+            <div class="about-stats">
+                <div class="stat-card">
+                    <span>3.5</span>
+                    <p>University GPA</p>
+                </div>
+                <div class="stat-card">
+                    <span>A+</span>
+                    <p>Graduation Project</p>
+                </div>
+                <div class="stat-card">
+                    <span>6.0</span>
+                    <p>IELTS Academic</p>
+                </div>
+                <div class="stat-card">
+                    <span>IEEE</span>
+                    <p>Manuscript Prep</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="container reveal">
+        <div class="section-header">
+            <h2>Featured Projects</h2>
+            <div class="line"></div>
+        </div>
+        <div class="project-grid">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <div class="project-img"><i class="fas fa-satellite-dish"></i></div>
+                <div class="project-info">
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Sionna</span>
+                        <span class="tag">Machine Learning</span>
+                    </div>
+                    <h3>Neural Codebook Design</h3>
+                    <p>Comprehensive reproduction of research in multi-cell 5G beam management using Network Beamspace Learning. Integrated initial access and beam refinement in ray-traced environments.</p>
+                    <a href="#" class="project-link">View Documentation <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            <!-- Project 2 -->
+            <div class="project-card">
+                <div class="project-img"><i class="fas fa-mobile-alt"></i></div>
+                <div class="project-info">
+                    <div class="project-tags">
+                        <span class="tag">Flutter</span>
+                        <span class="tag">Dart</span>
+                        <span class="tag">Android API</span>
+                    </div>
+                    <h3>Cross-Platform Utility App</h3>
+                    <p>A specialized mobile application featuring background periodic execution and custom interval triggers for hardware-level utility tracking and automated status reporting.</p>
+                    <a href="#" class="project-link">Source Code <i class="fas fa-code"></i></a>
+                </div>
+            </div>
+            <!-- Project 3 -->
+            <div class="project-card">
+                <div class="project-img"><i class="fas fa-graduation-cap"></i></div>
+                <div class="project-info">
+                    <div class="project-tags">
+                        <span class="tag">Curriculum Design</span>
+                        <span class="tag">Analytics</span>
+                    </div>
+                    <h3>8-Week Curriculum Framework</h3>
+                    <p>An intensive training program structure with automated performance tracking metrics and evaluation logic designed for technical skill acquisition pipelines.</p>
+                    <a href="#" class="project-link">View Framework <i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+            <!-- Project 4 -->
+            <div class="project-card">
+                <div class="project-img"><i class="fas fa-prescription-bottle-medical"></i></div>
+                <div class="project-info">
+                    <div class="project-tags">
+                        <span class="tag">Vector Design</span>
+                        <span class="tag">Branding</span>
+                    </div>
+                    <h3>Pharmaceutical Design System</h3>
+                    <p>Complete custom branding package and visual identity system for a healthcare startup, including vector assets, typographic systems, and brand guidelines.</p>
+                    <a href="#" class="project-link">View Branding <i class="fas fa-palette"></i></a>
+                </div>
+            </div>
+             <!-- Project 5 -->
+             <div class="project-card">
+                <div class="project-img"><i class="fas fa-wave-square"></i></div>
+                <div class="project-info">
+                    <div class="project-tags">
+                        <span class="tag">MATLAB</span>
+                        <span class="tag">MIMO</span>
+                    </div>
+                    <h3>2×2 MIMO OFDM Simulation</h3>
+                    <p>Physical layer simulation in MATLAB incorporating channel estimation, synchronization, and bit error rate analysis for 5G-standard wireless environments.</p>
+                    <a href="#" class="project-link">MATLAB Script <i class="fas fa-file-code"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="container reveal">
+        <div class="section-header">
+            <h2>Technical Skills</h2>
+            <div class="line"></div>
+        </div>
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3>Languages</h3>
+                <div class="skill-list">
+                    <span class="skill-badge">Python</span>
+                    <span class="skill-badge">C/C++</span>
+                    <span class="skill-badge">MATLAB</span>
+                    <span class="skill-badge">Dart</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Simulation & Tools</h3>
+                <div class="skill-list">
+                    <span class="skill-badge">Sionna</span>
+                    <span class="skill-badge">PyTorch</span>
+                    <span class="skill-badge">Git</span>
+                    <span class="skill-badge">LaTeX</span>
+                    <span class="skill-badge">Simulink</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Core Expertise</h3>
+                <div class="skill-list">
+                    <span class="skill-badge">MIMO Beamforming</span>
+                    <span class="skill-badge">Signal Processing</span>
+                    <span class="skill-badge">Embedded Systems</span>
+                    <span class="skill-badge">Deep Learning</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="contact-footer" id="contact">
+        <div class="container footer-content">
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+                <p>Open for research collaborations and engineering opportunities.</p>
+            </div>
+            <div class="footer-socials">
+                <a href="https://www.linkedin.com/in/adham-ehab-2003birth/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:engadhamehaberfan@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://wa.me/201204510329" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+            <a href="Adham_Ehab_CV.pdf" class="btn btn-primary" download>
+                Download My Full CV <i class="fas fa-download"></i>
+            </a>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Adham Ehab Erfan. Built with precision and passion.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle Logic
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        const icon = themeToggle.querySelector('i');
+
+        // Check for saved theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            body.setAttribute('data-theme', savedTheme);
+            icon.className = savedTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            // Toggle Icon
+            icon.className = newTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        });
+
+        // Sticky Nav Shadow
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.style.boxShadow = 'var(--shadow-lg)';
+            } else {
+                nav.style.boxShadow = 'none';
+            }
+        });
+
+        // Intersection Observer for Scroll Animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // Smooth navigation highlight
+        const sections = document.querySelectorAll('section, header');
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.style.color = 'var(--accent)';
+                } else {
+                    link.style.color = '';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
