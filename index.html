@@ -1,285 +1,294 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Favicon (Browser Tab Icon) -->
+    <link rel="icon" type="image/png" href="logo.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adham Ehab | ECE Researcher & AI Engineer</title>
-    
-    <!-- Favicon (Small logo in browser tab) -->
-    <link rel="icon" type="image/png" href="logo.png">
-
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    
-    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        :root {
-            /* Branding: Gold/Brass to match your logo */
-            --bg-primary: #ffffff;
-            --bg-secondary: #f8fafc;
-            --bg-card: #ffffff;
-            --text-primary: #0f172a;
-            --text-secondary: #334155;
-            --text-muted: #64748b;
-            --accent: #c5a059; 
-            --accent-hover: #a38241;
-            --accent-soft: rgba(197, 160, 89, 0.1);
-            --border: #e2e8f0;
-            --nav-bg: rgba(255, 255, 255, 0.9);
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
+    :root {
+        --bg-primary: #ffffff;
+        --bg-secondary: #f8fafc;
+        --bg-card: #ffffff;
+        --text-primary: #0f172a;
+        --text-secondary: #334155;
+        --text-muted: #64748b;
+        /* UPDATED TO MATCH YOUR LOGO GOLD */
+        --accent: #c5a059; 
+        --accent-hover: #a38241;
+        --accent-soft: rgba(197, 160, 89, 0.1);
+        --border: #e2e8f0;
+        --nav-bg: rgba(255, 255, 255, 0.9);
+        --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-        [data-theme="dark"] {
-            --bg-primary: #020617;
-            --bg-secondary: #0f172a;
-            --bg-card: #1e293b;
-            --text-primary: #f1f5f9;
-            --text-secondary: #cbd5e1;
-            --text-muted: #94a3b8;
-            --accent: #d4af37;
-            --accent-hover: #f1c40f;
-            --accent-soft: rgba(212, 175, 55, 0.2);
-            --border: #334155;
-            --nav-bg: rgba(2, 6, 23, 0.9);
-            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
-        }
+    [data-theme="dark"] {
+        --bg-primary: #020617;
+        --bg-secondary: #0f172a;
+        --bg-card: #1e293b;
+        --text-primary: #f1f5f9;
+        --text-secondary: #cbd5e1;
+        --text-muted: #94a3b8;
+        /* BRIGHTER GOLD FOR DARK MODE */
+        --accent: #d4af37;
+        --accent-hover: #f1c40f;
+        --accent-soft: rgba(212, 175, 55, 0.2);
+        --border: #334155;
+        --nav-bg: rgba(2, 6, 23, 0.9);
+        --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+    }
+     /* Navbar Logo Styling */
+    .logo-container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+    }
+    .nav-logo-img {
+        height: 32px; /* Small like LinkedIn icon */
+        width: auto;
+        border-radius: 4px;
+    }
+    .logo-text {
+        font-weight: 800;
+        font-size: 1.2rem;
+        color: var(--text-primary);
+        letter-spacing: -0.5px;
+    }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.6;
-            transition: background-color 0.4s ease, color 0.4s ease;
-        }
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+        line-height: 1.6;
+        transition: background-color 0.4s ease, color 0.4s ease;
+    }
 
-        /* --- HERO SECTION --- */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 140px 2rem 80px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(rgba(2, 6, 23, 0.8), rgba(2, 6, 23, 0.8)), 
-                        url('https://media.istockphoto.com/id/1277730699/photo/industrial-technology-concept-communication-network-industry-4-0-factory-automation.jpg?s=612x612&w=0&k=20&c=fjMsuwxizMNBiqvzoCOsYJ1HlRHMrwxMWc0xHKJMZBA=');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: white;
-        }
+    /* --- HERO SECTION --- */
+    .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 140px 2rem 80px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(rgba(2, 6, 23, 0.8), rgba(2, 6, 23, 0.8)), 
+                    url('https://media.istockphoto.com/id/1277730699/photo/industrial-technology-concept-communication-network-industry-4-0-factory-automation.jpg?s=612x612&w=0&k=20&c=fjMsuwxizMNBiqvzoCOsYJ1HlRHMrwxMWc0xHKJMZBA=');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        color: white;
+    }
 
-        .hero-content { position: relative; z-index: 10; }
+    .hero-content { position: relative; z-index: 10; }
 
-        /* Profile Container with Signal Pulse */
-        .profile-container {
-            position: relative;
-            width: 280px;
-            height: 280px;
-            margin: 0 auto 2.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            animation: fadeInDown 1s ease-out;
-        }
+    .profile-container {
+        position: relative;
+        width: 280px;
+        height: 280px;
+        margin: 0 auto 2.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: fadeInDown 1s ease-out;
+    }
 
-        .signal-ring {
-            position: absolute;
-            border: 2px solid var(--accent);
-            border-radius: 50%;
-            opacity: 0;
-            z-index: 1;
-            animation: signalPulse 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-        }
-        .ring-2 { animation-delay: 1.3s; }
-        .ring-3 { animation-delay: 2.6s; }
+    /* MIMO Signal Rings on Profile */
+    .signal-ring {
+        position: absolute;
+        border: 2px solid var(--accent);
+        border-radius: 50%;
+        opacity: 0;
+        z-index: 1;
+        animation: signalPulse 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+    .ring-2 { animation-delay: 1.3s; }
+    .ring-3 { animation-delay: 2.6s; }
 
-        .profile-img {
-            width: 240px;
-            height: 240px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 6px solid white;
-            box-shadow: 0 0 30px rgba(197, 160, 89, 0.5);
-            position: relative;
-            z-index: 5;
-        }
+    .profile-img {
+        width: 240px;
+        height: 240px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 6px solid white;
+        box-shadow: 0 0 30px rgba(96, 165, 250, 0.5);
+        position: relative;
+        z-index: 5;
+    }
 
-        .hero h1 { font-size: clamp(2.5rem, 8vw, 4rem); font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem; color: #ffffff; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
-        .hero h2 { font-size: 1.25rem; color: #f1f5f9; font-weight: 500; max-width: 800px; margin: 0 auto 2.5rem; line-height: 1.6; }
+    .hero h1 { font-size: clamp(2.5rem, 8vw, 4rem); font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem; color: #ffffff; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+    .hero h2 { font-size: 1.25rem; color: #e2e8f0; font-weight: 500; max-width: 800px; margin: 0 auto 2.5rem; line-height: 1.6; }
+    .hero .stat-badge { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); color: white; padding: 0.75rem 1.5rem; border-radius: 16px; display: flex; align-items: center; gap: 10px; }
+    .hero .stat-badge b, .hero .stat-badge i { color: var(--accent); }
 
-        /* --- NAVIGATION --- */
-        nav { position: fixed; top: 0; width: 100%; z-index: 1000; background-color: var(--nav-bg); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
-        .nav-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 2rem; }
-        
-        .logo-container { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-        .nav-logo-img { height: 32px; width: auto; }
-        .logo-text { font-weight: 800; font-size: 1.2rem; color: var(--text-primary); }
+    /* --- NAVIGATION --- */
+    nav { position: fixed; top: 0; width: 100%; z-index: 1000; background-color: var(--nav-bg); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .nav-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 2rem; }
+    .logo { font-weight: 800; font-size: 1.4rem; color: var(--text-primary); text-decoration: none; }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-links a { text-decoration: none; color: var(--text-secondary); font-weight: 500; font-size: 0.9rem; transition: var(--transition); }
+    .nav-links a:hover { color: var(--accent); }
+    .theme-toggle { background: var(--accent-soft); border: none; color: var(--accent); width: 40px; height: 40px; border-radius: 12px; cursor: pointer; display: flex; align-items: center; justify-content: center; }
 
-        .nav-links { display: flex; gap: 2rem; align-items: center; }
-        .nav-links a { text-decoration: none; color: var(--text-secondary); font-weight: 500; font-size: 0.9rem; transition: var(--transition); }
-        .nav-links a:hover { color: var(--accent); }
-        .theme-toggle { background: var(--accent-soft); border: none; color: var(--accent); width: 40px; height: 40px; border-radius: 12px; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+    /* --- CONTENT SECTIONS --- */
+    section { padding: 100px 0; max-width: 1200px; margin: 0 auto; padding-left: 2rem; padding-right: 2rem; }
+    .section-header { font-size: 2.2rem; font-weight: 800; margin-bottom: 3.5rem; position: relative; display: inline-block; }
+    .section-header::after { content: ''; position: absolute; left: 0; bottom: -8px; width: 50px; height: 4px; background: var(--accent); border-radius: 2px; }
 
-        /* --- CONTENT --- */
-        section { padding: 100px 0; max-width: 1200px; margin: 0 auto; padding-left: 2rem; padding-right: 2rem; }
-        .section-header { font-size: 2.2rem; font-weight: 800; margin-bottom: 3.5rem; position: relative; display: inline-block; }
-        .section-header::after { content: ''; position: absolute; left: 0; bottom: -8px; width: 50px; height: 4px; background: var(--accent); border-radius: 2px; }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 2.5rem; }
+    .project-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 24px; overflow: hidden; transition: var(--transition); display: flex; flex-direction: column; box-shadow: var(--shadow); }
+    .project-card:hover { transform: translateY(-12px); box-shadow: var(--shadow-lg); border-color: var(--accent); }
+    .project-img { height: 220px; width: 100%; object-fit: cover; border-bottom: 1px solid var(--border); }
+    .project-content { padding: 2rem; flex-grow: 1; display: flex; flex-direction: column; }
+    .tags { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 1.2rem; }
+    .tag { padding: 4px 12px; background: var(--bg-secondary); border-radius: 8px; font-size: 0.75rem; font-weight: 600; color: var(--accent); border: 1px solid var(--border); }
+    .project-card h3 { margin-bottom: 0.8rem; font-size: 1.4rem; }
+    .project-card p { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.8rem; flex-grow: 1; }
+    .project-btn { text-decoration: none; font-weight: 700; color: var(--text-primary); display: inline-flex; align-items: center; gap: 8px; transition: var(--transition); }
+    .project-btn:hover { color: var(--accent); }
 
-        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 2.5rem; }
-        .project-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 24px; overflow: hidden; transition: var(--transition); display: flex; flex-direction: column; box-shadow: var(--shadow); }
-        .project-card:hover { transform: translateY(-12px); box-shadow: var(--shadow-lg); border-color: var(--accent); }
-        .project-img { height: 220px; width: 100%; object-fit: cover; border-bottom: 1px solid var(--border); }
-        .project-content { padding: 2rem; flex-grow: 1; display: flex; flex-direction: column; }
-        
-        .tags { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 1.2rem; }
-        .tag { padding: 4px 12px; background: var(--bg-secondary); border-radius: 8px; font-size: 0.75rem; font-weight: 600; color: var(--accent); border: 1px solid var(--border); }
-        
-        .project-card h3 { margin-bottom: 0.8rem; font-size: 1.4rem; }
-        .project-card p { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.8rem; flex-grow: 1; }
-        .project-btn { text-decoration: none; font-weight: 700; color: var(--text-primary); display: inline-flex; align-items: center; gap: 8px; transition: var(--transition); }
-        .project-btn:hover { color: var(--accent); }
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .skill-box { background: var(--bg-card); padding: 2rem; border-radius: 18px; border: 1px solid var(--border); }
+    .skill-box h4 { margin-bottom: 1.2rem; color: var(--accent); font-family: 'JetBrains Mono', monospace; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+    .skill-tag { background: var(--bg-secondary); padding: 6px 14px; border-radius: 10px; font-size: 0.85rem; font-weight: 500; border: 1px solid var(--border); }
 
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-        .skill-box { background: var(--bg-card); padding: 2rem; border-radius: 18px; border: 1px solid var(--border); }
-        .skill-box h4 { margin-bottom: 1.2rem; color: var(--accent); font-family: 'JetBrains Mono', monospace; text-transform: uppercase; font-size: 0.9rem; }
-        .skill-tags { display: flex; flex-wrap: wrap; gap: 10px; }
-        .skill-tag { background: var(--bg-secondary); padding: 6px 14px; border-radius: 10px; font-size: 0.85rem; font-weight: 500; border: 1px solid var(--border); }
+    .btn { padding: 12px 28px; border-radius: 12px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: var(--transition); cursor: pointer; }
+    .btn-primary { background: var(--accent); color: white; border: none; }
+    .btn-primary:hover { background: var(--accent-hover); transform: translateY(-3px); }
+    .btn-outline { border: 2px solid var(--border); color: var(--text-primary); }
+    .hero .btn-outline { border-color: white; color: white; }
+    .hero .btn-outline:hover { background: white; color: var(--accent); }
 
-        .btn { padding: 12px 28px; border-radius: 12px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: var(--transition); cursor: pointer; }
-        .btn-primary { background: var(--accent); color: white; border: none; }
-        .btn-primary:hover { background: var(--accent-hover); transform: translateY(-3px); }
-        .btn-outline { border: 2px solid var(--border); color: var(--text-primary); }
-        .hero .btn-outline { border-color: white; color: white; }
-        .hero .btn-outline:hover { background: white; color: var(--accent); }
+    /* --- FOOTER LAYOUT (Antenna & Signal on Sides) --- */
+    footer { background: var(--bg-secondary); padding: 80px 2rem; border-top: 1px solid var(--border); }
+    .footer-container { max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+    
+    .footer-left, .footer-right { flex: 1; display: flex; flex-direction: column; align-items: center; min-width: 150px; }
+    .footer-center { flex: 2; text-align: center; display: flex; flex-direction: column; align-items: center; }
 
-        /* --- FOOTER LAYOUT --- */
-        footer { background: var(--bg-secondary); padding: 80px 2rem; border-top: 1px solid var(--border); }
-        .footer-container { max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
-        
-        .footer-left, .footer-right { flex: 1; display: flex; flex-direction: column; align-items: center; min-width: 150px; }
-        .footer-center { flex: 2; text-align: center; display: flex; flex-direction: column; align-items: center; }
+    /* Antenna Animation (Left) */
+    .antenna-box { position: relative; width: 60px; height: 100px; display: flex; flex-direction: column; align-items: center; }
+    .antenna-tower { width: 3px; height: 50px; background: var(--accent); position: absolute; bottom: 0; border-radius: 2px; }
+    .antenna-top { width: 10px; height: 10px; background: var(--accent); border-radius: 50%; position: absolute; top: 40px; }
+    .beam { position: absolute; border: 1.5px solid var(--accent); border-radius: 50%; opacity: 0; animation: beamTransmit 2s infinite; }
+    .beam-1 { width: 30px; height: 30px; top: 30px; animation-delay: 0s; }
+    .beam-2 { width: 60px; height: 60px; top: 15px; animation-delay: 0.6s; }
+    .beam-3 { width: 90px; height: 90px; top: 0px; animation-delay: 1.2s; }
 
-        /* Antenna Animation (Left) */
-        .antenna-box { position: relative; width: 60px; height: 100px; display: flex; flex-direction: column; align-items: center; }
-        .antenna-tower { width: 3px; height: 50px; background: var(--accent); position: absolute; bottom: 0; border-radius: 2px; }
-        .antenna-top { width: 10px; height: 10px; background: var(--accent); border-radius: 50%; position: absolute; top: 40px; }
-        .beam { position: absolute; border: 1.5px solid var(--accent); border-radius: 50%; opacity: 0; animation: beamTransmit 2s infinite; }
-        .beam-1 { width: 30px; height: 30px; top: 30px; animation-delay: 0s; }
-        .beam-2 { width: 60px; height: 60px; top: 15px; animation-delay: 0.6s; }
-        .beam-3 { width: 90px; height: 90px; top: 0px; animation-delay: 1.2s; }
+    /* Life Signal Animation (Right) */
+    .signal-box { width: 180px; height: 60px; position: relative; }
+    .signal-path { fill: none; stroke: var(--accent); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: drawSignal 4s linear infinite; }
 
-        /* Life Signal Animation (Right) */
-        .signal-box { width: 180px; height: 60px; position: relative; }
-        .signal-path { fill: none; stroke: var(--accent); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: drawSignal 4s linear infinite; }
-        
-        .side-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--accent); margin-top: 10px; letter-spacing: 1px; text-transform: uppercase; }
+    .side-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--accent); margin-top: 10px; letter-spacing: 1px; text-transform: uppercase; }
 
-        /* --- ANIMATIONS --- */
-        @keyframes signalPulse { 0% { width: 220px; height: 220px; opacity: 0.8; } 100% { width: 500px; height: 500px; opacity: 0; } }
-        @keyframes beamTransmit { 0% { transform: scale(0.3); opacity: 0; } 50% { opacity: 0.5; } 100% { transform: scale(1.4); opacity: 0; } }
-        @keyframes drawSignal { 0% { stroke-dashoffset: 1000; } 100% { stroke-dashoffset: 0; } }
-        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
-        
-        .reveal { opacity: 0; transform: translateY(40px); transition: 0.8s all ease-out; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
+    /* --- ANIMATIONS --- */
+    @keyframes signalPulse { 0% { width: 220px; height: 220px; opacity: 0.8; } 100% { width: 500px; height: 500px; opacity: 0; } }
+    @keyframes beamTransmit { 0% { transform: scale(0.3); opacity: 0; } 50% { opacity: 0.5; } 100% { transform: scale(1.4); opacity: 0; } }
+    @keyframes drawSignal { 0% { stroke-dashoffset: 1000; } 100% { stroke-dashoffset: 0; } }
+    @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+    
+    .reveal { opacity: 0; transform: translateY(40px); transition: 0.8s all ease-out; }
+    .reveal.active { opacity: 1; transform: translateY(0); }
 
-        .social-links { display: flex; justify-content: center; gap: 2.5rem; margin-bottom: 2rem; }
-        .social-links a { color: var(--text-secondary); font-size: 1.8rem; transition: var(--transition); }
-        .social-links a:hover { color: var(--accent); transform: translateY(-5px); }
+    .social-links { display: flex; justify-content: center; gap: 2.5rem; margin-bottom: 2rem; }
+    .social-links a { color: var(--text-secondary); font-size: 1.8rem; transition: var(--transition); }
+    .social-links a:hover { color: var(--accent); transform: translateY(-5px); }
 
-        @media (max-width: 900px) {
-            .hero { padding-top: 100px; background-attachment: scroll; }
-            .nav-links { display: none; }
-            .footer-container { flex-direction: column; gap: 40px; }
-            .footer-left, .footer-right { order: 2; }
-            .footer-center { order: 1; }
-            .profile-container { width: 220px; height: 220px; }
-            .profile-img { width: 180px; height: 180px; }
-        }
-    </style>
+    @media (max-width: 900px) {
+        .hero { padding-top: 100px; background-attachment: scroll; }
+        .nav-links { display: none; }
+        .footer-container { flex-direction: column; gap: 40px; }
+        .footer-left, .footer-right { order: 2; }
+        .footer-center { order: 1; }
+        .profile-container { width: 220px; height: 220px; }
+        .profile-img { width: 180px; height: 180px; }
+    }
+    </style> 
 </head>
 <body data-theme="light">
 
-    <!-- NAVIGATION -->
     <nav>
-        <div class="nav-content">
-            <a href="#" class="logo-container">
-                <img src="logo.png" alt="AE" class="nav-logo-img">
-                <span class="logo-text">Adham Ehab</span>
-            </a>
-            <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#skills">Skills</a>
-                <a href="#contact">Contact</a>
-                <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
-            </div>
+    <div class="nav-content">
+        <a href="#" class="logo-container">
+            <!-- Your AE Logo -->
+            <img src="logo.png" alt="AE Logo" class="nav-logo-img">
+            <span class="logo-text">Adham Ehab</span>
+        </a>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+            <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
         </div>
+    </div>
     </nav>
 
-    <!-- HERO -->
     <header class="hero">
-        <div class="hero-content">
-            <div class="profile-container">
-                <div class="signal-ring ring-1"></div>
-                <div class="signal-ring ring-2"></div>
-                <div class="signal-ring ring-3"></div>
-                <img src="profile.jpg" alt="Adham Ehab" class="profile-img">
+    <div class="hero-content">
+        <!-- MIMO Signal Pulse Effects over Tech Background -->
+        <div class="profile-container">
+            <div class="signal-ring ring-1"></div>
+            <div class="signal-ring ring-2"></div>
+            <div class="signal-ring ring-3"></div>
+            <img src="profile.jpg" alt="Adham Ehab" class="profile-img">
+        </div>
+        
+        <h1>I am Adham Ehab</h1>
+        <h2>A Final-Year ECE Student | MIMO & 5G/6G Research | Deep Learning for Wireless Communications | Seeking MS Scholarship</h2>
+        
+        <div class="stats-row" style="display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 3rem; flex-wrap: wrap;">
+            <div class="stat-badge" style="padding: 0.75rem 1.5rem; border-radius: 16px; display: flex; align-items: center; gap: 10px;">
+                <i class="fas fa-university"></i>
+                <span>Alexandria University</span>
             </div>
-            
-            <h1>I am Adham Ehab</h1>
-            <h2>A Final-Year ECE Student | MIMO & 5G/6G Research | Deep Learning for Wireless Communications | Seeking MS Scholarship</h2>
-            
-            <div class="stats-row" style="display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 3rem; flex-wrap: wrap;">
-                <div class="stat-badge">
-                    <i class="fas fa-university"></i>
-                    <span>Alexandria University</span>
-                </div>
-                <div class="stat-badge">
-                    <i class="fas fa-chart-line"></i>
-                    <span>GPA: <b>3.5 / 4.0</b></span>
-                </div>
-                <div class="stat-badge">
-                    <i class="fas fa-award"></i>
-                    <span>Grad Project: <b>A+ Grade</b></span>
-                </div>
+            <div class="stat-badge" style="padding: 0.75rem 1.5rem; border-radius: 16px; display: flex; align-items: center; gap: 10px;">
+                <i class="fas fa-chart-line"></i>
+                <span>GPA: <b>3.5 / 4.0</b></span>
             </div>
-
-            <div class="btn-group" style="display: flex; gap: 1rem; justify-content: center;">
-                <a href="#projects" class="btn btn-primary">Featured Work</a>
-                <a href="Adham_Ehab_CV.pdf" class="btn btn-outline" download>
-                    <i class="fas fa-file-pdf"></i> Download CV
-                </a>
+            <div class="stat-badge" style="padding: 0.75rem 1.5rem; border-radius: 16px; display: flex; align-items: center; gap: 10px;">
+                <i class="fas fa-award"></i>
+                <span>Grad Project: <b>A+ Grade</b></span>
             </div>
         </div>
+
+        <div class="btn-group" style="display: flex; gap: 1rem; justify-content: center;">
+            <a href="#projects" class="btn btn-primary">Featured Work</a>
+            <a href="Adham_Ehab_CV.pdf" class="btn btn-outline" download>
+                <i class="fas fa-file-pdf"></i> Download CV
+            </a>
+        </div>
+    </div>
     </header>
 
-    <!-- ABOUT -->
     <section id="about" class="reveal">
         <h2 class="section-header">Background</h2>
-        <div class="about-text">
-            <p>I am a final-year Electronics and Communication Engineering student at <strong>Alexandria University</strong>, specializing in bridging advanced Signal Processing and Deep Learning. My academic focus is the physical layer of next-generation wireless networks (5G/6G).</p>
-            <p>I specialize in <strong>MIMO systems</strong> and <strong>Beamforming optimization</strong>. Using tools like PyTorch and Sionna, I develop AI-driven solutions for interference mitigation and spectral efficiency. I am currently seeking a Master's scholarship to further my research in AI-native communication systems.</p>
-            <p>In addition to my research, I have practical experience in <strong>Embedded Systems</strong>, recently completing an internship at Siemens Egypt focusing on microcontroller architectures and industrial protocols.</p>
+        <div class="about-grid" style="display: grid; grid-template-columns: 1fr; gap: 2rem;">
+            <div class="about-text">
+                <p>I am a final-year Communication and Electronics Engineering student at <strong>Alexandria University</strong>, focused on bridging the gap between advanced Signal Processing and Deep Learning. My academic journey is centered on the physical layer of next-generation wireless networks (5G/6G).</p>
+                <p>I specialize in <strong>MIMO systems</strong> and <strong>Beamforming optimization</strong>. Using frameworks like PyTorch and Sionna, I develop AI-driven solutions for interference mitigation and spectral efficiency. My goal is to secure a Master's scholarship to push the boundaries of AI-native communication systems.</p>
+            </div>
         </div>
     </section>
 
-    <!-- PROJECTS -->
     <section id="projects" class="reveal">
         <h2 class="section-header">Featured Research & Dev</h2>
         <div class="projects-grid">
             
-            <!-- Jammer -->
+            <!-- Project 1: Jammer -->
             <div class="project-card">
                 <img src="https://media.wired.com/photos/69a9ed524d78fe1b285c59c4/master/w_2560%2Cc_limit/Gear_Spectre_2.jpg" alt="Jammer Optimization" class="project-img">
                 <div class="project-content">
@@ -287,12 +296,12 @@
                         <span class="tag">Deep RL</span><span class="tag">DQN</span><span class="tag">Python</span>
                     </div>
                     <h3>Intelligent Jammer Optimizer</h3>
-                    <p>Designed a DQN agent that learns to target frequency-hopping patterns. Achieved a 78.5% success rate against structured hopping—a 12x improvement over random baselines.</p>
+                    <p>Designed a DQN agent that learns to target frequency-hopping patterns. Achieved a 78.5% jamming success rate against structured hopping—a 12x improvement over random baselines.</p>
                     <a href="https://github.com/AdhamEhabErfan/jammer-optimization" target="_blank" class="project-btn">View Repository <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
 
-            <!-- MIMO -->
+            <!-- Project 2: MIMO -->
             <div class="project-card">
                 <img src="https://verkotan.com/wp-content/uploads/2021/02/Beamformin-article-1.png" alt="MIMO Research" class="project-img">
                 <div class="project-content">
@@ -305,46 +314,47 @@
                 </div>
             </div>
 
-            <!-- Islamic -->
+            <!-- Project 3: Islamic App -->
             <div class="project-card">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQm8knybqZlP0aRBEv5htyy76lJ0x71j7ZQkIiiuIv0qRPbwsAjWcKXBAi0&s=10" alt="Islamic App" class="project-img">
+                <!-- Use the mosque image you provided -->
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQm8knybqZlP0aRBEv5htyy76lJ0x71j7ZQkIiiuIv0qRPbwsAjWcKXBAi0&s=10" alt="Islamic MVP App" class="project-img">
                 <div class="project-content">
                     <div class="tags">
                         <span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">MVP</span>
                     </div>
                     <h3>Islamic Lifestyle MVP</h3>
-                    <p>A mobile application featuring automated Adhan scheduling, Qibla compass, Azkar, and a comprehensive prayer tracker.</p>
+                    <p>A mobile application featuring automated Adhan scheduling, Qibla compass, Azkar, and a comprehensive prayer tracker for religious consistency.</p>
                     <a href="https://github.com/AdhamEhabErfan/Islamic-MVP" target="_blank" class="project-btn">View Repository <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
 
-            <!-- Robotic Arm -->
+            <!-- Project 4: Robotic Arm -->
             <div class="project-card">
                 <img src="https://t3.ftcdn.net/jpg/11/70/67/64/360_F_1170676472_wQvKGtRsWq0xGJl5sBfEbQeQ8CqlHbQS.jpg" alt="Robotic Arm" class="project-img">
                 <div class="project-content">
                     <div class="tags">
-                        <span class="tag">Robotics</span><span class="tag">Kinematics</span><span class="tag">Arduino</span>
+                        <span class="tag">Robotics</span><span class="tag">Inverse Kinematics</span><span class="tag">MATLAB</span>
                     </div>
                     <h3>Robotic Arm Controller</h3>
-                    <p>Control system for a multi-DOF arm using inverse kinematics and real-time sensor feedback for precision object manipulation.</p>
+                    <p>Integrated control system for a multi-DOF arm using inverse kinematics and real-time sensor feedback for high-precision object manipulation.</p>
                     <a href="https://github.com/AdhamEhabErfan/robotic-arm" target="_blank" class="project-btn">View Repository <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
 
-            <!-- IELTS -->
+            <!-- Project 5: IELTS -->
             <div class="project-card">
                 <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&q=80&w=1000" alt="IELTS Course" class="project-img">
                 <div class="project-content">
                     <div class="tags">
-                        <span class="tag">Education</span><span class="tag">Band 7.0</span>
+                        <span class="tag">Education</span><span class="tag">Curriculum</span><span class="tag">Band 7.0</span>
                     </div>
                     <h3>IELTS Prep: Path to Band 7</h3>
-                    <p>8-week structured curriculum focused on Academic IELTS. Designed modules for all skills to reach a 7.0+ target score.</p>
+                    <p>A complete 8-week structured curriculum focused on Academic IELTS. Designed modules for all four skills to help students reach a 7.0+ target score.</p>
                     <a href="https://drive.google.com/drive/folders/1FEODtcVrr8tV3F9NcE4IqEQlHAxafZX5?usp=sharing" target="_blank" class="project-btn">Access Course <i class="fas fa-external-link-alt"></i></a>
                 </div>
             </div>
 
-            <!-- Pharmacy -->
+            <!-- Project 6: Pharmacy -->
             <div class="project-card">
                 <img src="https://images.stockcake.com/public/0/6/c/06c80de5-fdf9-461c-85e4-c6c26c33aabb_large/pharmacy-interior-design-stockcake.jpg" alt="Pharmacy App" class="project-img">
                 <div class="project-content">
@@ -352,7 +362,7 @@
                         <span class="tag">Flutter</span><span class="tag">Database</span>
                     </div>
                     <h3>Pharmacy Management Pro</h3>
-                    <p>System for inventory, pricing, and automated offers. Includes modules for professional pharmacist advice.</p>
+                    <p>Inventory system for managing medicine pricing, expiration dates, and search. Includes modules for professional pharmacist advice and automated offers.</p>
                     <span class="project-btn" style="opacity: 0.6; cursor: default;">Repo Private <i class="fas fa-lock"></i></span>
                 </div>
             </div>
@@ -360,7 +370,6 @@
         </div>
     </section>
 
-    <!-- SKILLS -->
     <section id="skills" class="reveal">
         <h2 class="section-header">Technical Skills</h2>
         <div class="skills-grid">
@@ -379,7 +388,7 @@
             <div class="skill-box">
                 <h4>Comms & Engineering</h4>
                 <div class="skill-tags">
-                    <span class="skill-tag">MIMO</span><span class="skill-tag">Beamforming</span><span class="skill-tag">Embedded</span><span class="skill-tag">PCB Design</span>
+                    <span class="skill-tag">MIMO</span><span class="skill-tag">Beamforming</span><span class="skill-tag">Embedded Systems</span><span class="skill-tag">PCB Design</span>
                 </div>
             </div>
             <div class="skill-box">
@@ -390,11 +399,11 @@
             </div>
         </div>
     </section>
-
-    <!-- FOOTER -->
+    
     <footer id="contact">
         <div class="footer-container">
             
+            <!-- LEFT COLUMN: ANTENNA -->
             <div class="footer-left">
                 <div class="antenna-box">
                     <div class="beam beam-1"></div>
@@ -406,6 +415,7 @@
                 <p class="side-label">TX-MIMO: ACTIVE</p>
             </div>
 
+            <!-- CENTER COLUMN: SOCIALS & CV -->
             <div class="footer-center">
                 <div class="social-links">
                     <a href="https://www.linkedin.com/in/adham-ehab-2003birth/" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -423,6 +433,7 @@
                 </p>
             </div>
 
+            <!-- RIGHT COLUMN: LIFE SIGNAL -->
             <div class="footer-right">
                 <div class="signal-box">
                     <svg viewBox="0 0 200 60" preserveAspectRatio="none" style="width: 100%; height: 100%;">
